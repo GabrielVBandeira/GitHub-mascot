@@ -1,4 +1,3 @@
-// api/mascot.js
 import { Redis } from "@upstash/redis";
 import fs from "fs";
 import path from "path";
@@ -31,7 +30,6 @@ export default async function handler(req, res) {
 	const borderColor = isHappy ? "#2ea043" : "#f85149";
 	const badgeBg = isHappy ? "#122d1f" : "#3d1318";
 
-	// Textos atualizados para o tema de café
 	const badgeText = isHappy
 		? "CAFEINADO (PRONTO PARA CODAR)"
 		: "QUERO CAFÉ (ESSENCIAL PARA FUNCIONAMENTO)";
@@ -60,14 +58,11 @@ export default async function handler(req, res) {
         }
       </style>
 
-      <!-- Fundo do Card -->
       <rect x="2" y="2" width="516" height="256" class="bg" />
 
-      <!-- Tag de Status mais larga para caber a frase nova -->
       <rect x="70" y="16" width="380" height="24" class="badge" />
       <text x="260" y="32" text-anchor="middle" class="badge-txt">${badgeText}</text>
 
-      <!-- Pixel Art Ampliada (135x135 centralizada no eixo X=260) -->
       <image 
         href="${mascotImage}" 
         x="192.5" 
@@ -77,10 +72,8 @@ export default async function handler(req, res) {
         class="pixel-art" 
       />
 
-      <!-- Frase Cinza -->
       <text x="260" y="205" text-anchor="middle" class="msg">${message}</text>
 
-      <!-- Contador de Cafés -->
       <text x="260" y="235" text-anchor="middle" class="counter">
         ☕ Cafés recebidos da comunidade: ${totalFeeds}
       </text>
